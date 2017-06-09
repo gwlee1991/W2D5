@@ -6,7 +6,7 @@ class Array
   def hash
   endval = 1
   self.each_with_index do |val , idx|
-    endval += (val * idx)
+    endval += (val.hash * idx)
   end
     endval.hash
   end
