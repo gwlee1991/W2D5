@@ -15,6 +15,11 @@ class LRUCache
   end
 
   def get(key)
+    if @map.get(key).nil?
+      value = @prc.call(key)
+      # push key and new val to both map and store at this point
+
+
   end
 
   def to_s
@@ -28,7 +33,6 @@ class LRUCache
   end
 
   def update_link!(link)
-    # suggested helper method; move a link to the end of the list
   end
 
   def eject!

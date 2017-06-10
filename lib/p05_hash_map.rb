@@ -35,10 +35,8 @@ class HashMap
   end
 
   def get(key)
-    @store.each do |list|
-      return list.get(key) unless list.get(key).nil?
-    end
-    nil
+    mod = key.hash % num_buckets
+    @store[mod].get(key)
   end
 
   def delete(key)
